@@ -19,7 +19,11 @@
 public class ProblemSet5 {
     
     public static void main(String[] args) {
-        
+        ProblemSet5 ps = new ProblemSet5();
+
+        ps.surroundMe("in", "outs");
+        ps.endsMeet("Sadness", 5);
+
     }
     
     /*
@@ -30,6 +34,16 @@ public class ProblemSet5 {
      */
     
     public String surroundMe(String in, String out) {
+
+        String output = "";
+        
+        if ((in != null) && (out != null) && out.length() == 4) {
+            output += out.substring(0, 2) + in + out.substring(2);
+        } else {
+            output += in;
+        }
+
+        return output;
 
     }
     
@@ -42,6 +56,16 @@ public class ProblemSet5 {
     
     public String endsMeet(String text, int n) {
 
+        String output = "";
+
+            //if text is not null and is between 1 and 10 characters, inclusive and n is between 1 and the length of the text, inclusive
+        if ((text != null) && (1 <= text.length() && text.length() <= 10) && (1 <= n && n <= text.length())) {
+            output = text.substring(0, n) + text.substring(text.length() - n);
+        } else {
+            output = text;
+        }
+
+        return output;
     }
     
     /*
@@ -51,7 +75,7 @@ public class ProblemSet5 {
      */
     
     public String middleMan(String text) {
-
+        return text;
     }
     
     /*
@@ -62,7 +86,8 @@ public class ProblemSet5 {
      */
     
     public boolean isCentered(String text, String target) {
-
+        boolean temp = false;
+        return temp;
     }
     
     /*
@@ -72,7 +97,8 @@ public class ProblemSet5 {
      */
     
     public int countMe(String text, char suffix) {
-
+        int temp = 1;
+        return temp;
     }
     
     /*
@@ -82,7 +108,8 @@ public class ProblemSet5 {
      */
     
     public int triplets(String text) {
-
+        int temp = 1;
+        return temp;
     }
     
     /*
@@ -92,7 +119,8 @@ public class ProblemSet5 {
      */
     
     public long addMe(String text) {
-
+        long temp = 1;
+        return temp;
     }
     
     /*
@@ -102,7 +130,8 @@ public class ProblemSet5 {
      */
     
     public long sequence(String text) {
-
+        long temp = 1;
+        return temp;
     }
     
     /*
@@ -113,7 +142,7 @@ public class ProblemSet5 {
      */
     
     public String intertwine(String a, String b) {
-
+        return a;
     }
     
     /*
@@ -123,6 +152,7 @@ public class ProblemSet5 {
      */
     
     public boolean isPalindrome(String text) {
-
+        boolean temp = false;
+        return temp;
     }
 }
