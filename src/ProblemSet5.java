@@ -37,13 +37,11 @@ public class ProblemSet5 {
     
     public String surroundMe(String in, String out) {
 
-        String output = "";
+        String output = in;
         
         if ((in != null) && (out != null) && out.length() == 4) {
-            output += out.substring(0, 2) + in + out.substring(2);
-        } else {
-            output += in;
-        }
+            output = out.substring(0, 2) + in + out.substring(2);
+        } 
 
         return output;
 
@@ -58,13 +56,11 @@ public class ProblemSet5 {
     
     public String endsMeet(String text, int n) {
 
-        String output = "";
+        String output = text;
 
             //if text is not null and is between 1 and 10 characters, inclusive and n is between 1 and the length of the text, inclusive
         if ((text != null) && (1 <= text.length() && text.length() <= 10) && (1 <= n && n <= text.length())) {
             output = text.substring(0, n) + text.substring(text.length() - n);
-        } else {
-            output = text;
         }
 
         return output;
@@ -78,13 +74,11 @@ public class ProblemSet5 {
     
     public String middleMan(String text) {
 
-        String output = "";
+        String output = text;
 
         if ((text != null) && (text.length() % 2 == 1) && (text.length() > 2)) {
             int middle = text.length() / 2;
             output = text.substring(middle - 1, middle + 2);
-        } else {
-            output = text;
         }
         
         return output;
