@@ -23,6 +23,8 @@ public class ProblemSet5 {
 
         ps.surroundMe("in", "outs");
         ps.endsMeet("Sadness", 5);
+        ps.middleMan("TeamTrees");
+        ps.middleMan("Depression");
 
     }
     
@@ -75,7 +77,18 @@ public class ProblemSet5 {
      */
     
     public String middleMan(String text) {
-        return text;
+
+        String output = "";
+
+        if ((text != null) && (text.length() % 2 == 1) && (text.length() > 2)) {
+            int middle = text.length() / 2;
+            output = text.substring(middle - 1, middle + 2);
+        } else {
+            output = text;
+        }
+        
+        return output;
+
     }
     
     /*
