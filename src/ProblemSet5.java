@@ -25,6 +25,7 @@ public class ProblemSet5 {
         ps.endsMeet("Sadness", 5);
         ps.middleMan("TeamTrees");
         ps.isCentered("TeamTrees", "mTr");
+        System.out.println(ps.countMe("TeamTrees", 'T'));
 
     }
     
@@ -110,8 +111,39 @@ public class ProblemSet5 {
      */
     
     public int countMe(String text, char suffix) {
-        int temp = 1;
-        return temp;
+        
+        int suffixedWords = -1;
+
+
+        if ((text != null) && (Character.isAlphabetic(suffix))) {
+            
+            int splicePoint;
+            String splicedText = "";
+            final char LAST_CHARACTER = text.charAt(text.length() - 1);
+
+            suffixedWords++;
+
+            while (text.length() >= 1) {
+
+
+                if (text.contains(" ")) {
+                    splicePoint = text.indexOf(" ");
+                    splicedText = text.substring(0, splicePoint);
+                    text = text.substring(splicePoint + 1);
+                } else if (!(Character.isLetter(LAST_CHARACTER))){
+                    splicedText = text + "\b";
+                }
+
+                System.out.println(splicedText);
+
+                if (splicedText.substring(splicedText.length() - 1).equals(suffix)) {
+                    suffixedWords++;
+                }
+            }
+        }
+
+        return suffixedWords;
+
     }
     
     /*
