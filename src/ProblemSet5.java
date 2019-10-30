@@ -24,7 +24,7 @@ public class ProblemSet5 {
         ps.surroundMe("in", "outs");
         ps.endsMeet("Sadness", 5);
         ps.middleMan("TeamTrees");
-        ps.middleMan("Depression");
+        ps.isCentered("TeamTrees", "mTr");
 
     }
     
@@ -99,8 +99,14 @@ public class ProblemSet5 {
      */
     
     public boolean isCentered(String text, String target) {
-        boolean temp = false;
-        return temp;
+        boolean centerIsTarget = false;
+        
+        if ((text != null && target != null) && (text.length() % 2 == 1) && (text.length() > 2 && target.length() == 3)) {
+            int middle = text.length() / 2;
+            centerIsTarget = text.substring(middle - 1, middle + 2).equals(target);
+        } 
+
+        return centerIsTarget;
     }
     
     /*
