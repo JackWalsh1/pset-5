@@ -25,7 +25,7 @@ public class ProblemSet5 {
         ps.endsMeet("Sadness", 5);
         ps.middleMan("TeamTrees");
         ps.isCentered("TeamTrees", "mTr");
-        System.out.println(ps.countMe("TeamTrees", 'T'));
+        ps.countMe("", 't');
 
     }
     
@@ -114,29 +114,32 @@ public class ProblemSet5 {
         
         int suffixedWords = -1;
 
-
-        if ((text != null) && (Character.isAlphabetic(suffix))) {
+        if ((text != null && text.length() != 0) && (Character.isAlphabetic(suffix))) {
             
             int splicePoint;
             String splicedText = "";
-            final char LAST_CHARACTER = text.charAt(text.length() - 1);
+            char lastCharacter = text.charAt(text.length() - 1);
+            boolean lastWordInString = false;
+            String suffixString = Character.toString(suffix);
 
             suffixedWords++;
 
-            while (text.length() >= 1) {
-
+            while (!lastWordInString) {
 
                 if (text.contains(" ")) {
                     splicePoint = text.indexOf(" ");
                     splicedText = text.substring(0, splicePoint);
                     text = text.substring(splicePoint + 1);
-                } else if (!(Character.isLetter(LAST_CHARACTER))){
-                    splicedText = text + "\b";
+                } else {
+                    lastWordInString = true;
+                    splicedText = text;
+                    if (!(Character.isLetterOrDigit(lastCharacter))){
+                        splicedText = splicedText.substring(0, splicedText.length() - 1);
+                    }
                 }
 
-                System.out.println(splicedText);
 
-                if (splicedText.substring(splicedText.length() - 1).equals(suffix)) {
+                if (splicedText.substring(splicedText.length() - 1).equals(suffixString)) {
                     suffixedWords++;
                 }
             }
