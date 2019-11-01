@@ -26,6 +26,7 @@ public class ProblemSet5 {
         ps.middleMan("TeamTrees");
         ps.isCentered("TeamTrees", "mTr");
         ps.countMe("", 't');
+        System.out.println(ps.triplets("Lll ooo P32ppfp po oooop."));
 
     }
     
@@ -156,10 +157,38 @@ public class ProblemSet5 {
      */
     
     public int triplets(String text) {
-        int temp = 1;
-        return temp;
+
+        int triplets = -1;
+
+        if (text != null && text.length() != 0) {
+            String splicedText = "";
+
+            triplets++; //+1 to remove failed test case
+
+            if (text.length() > 2) { //1 or 2-length strings return 0, not -1
+                for (int i = 0; i <= text.length() - 3; i++) {
+                    splicedText = text.substring(i, i + 3);
+                    if (isTriplet(splicedText)) {
+                        triplets++;
+                    }
+                }
+            }
+        }
+
+        return triplets;
+
     }
     
+    public boolean isTriplet(String splicedText) {
+
+        for (int j = 1; j < 3; j++) {
+            if (splicedText.charAt(j) != splicedText.charAt(0)) {
+                return false;
+            } 
+        }
+
+        return true;
+    }
     /*
      * Exercise 7.
      * 
