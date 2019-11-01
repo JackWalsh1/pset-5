@@ -26,7 +26,7 @@ public class ProblemSet5 {
         ps.middleMan("TeamTrees");
         ps.isCentered("TeamTrees", "mTr");
         ps.countMe("", 't');
-        System.out.println(ps.triplets("Lll ooo P32ppfp po oooop."));
+        ps.triplets("booo boooooooooooooooooooooooooooy");
 
     }
     
