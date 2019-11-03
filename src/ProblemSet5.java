@@ -25,8 +25,9 @@ public class ProblemSet5 {
         ps.endsMeet("Sadness", 5);
         ps.middleMan("TeamTrees");
         ps.isCentered("TeamTrees", "mTr");
-        ps.countMe("", 't');
+        ps.countMe("kjfdakjlt satrj dasfiaun432t fasiufasjd T klasdio34t.", 't');
         ps.triplets("booo boooooooooooooooooooooooooooy");
+        ps.addMe("1000 test cases, 100% loss of sanity, 30 hours, five times where I ate.");
 
     }
     
@@ -180,13 +181,13 @@ public class ProblemSet5 {
     
     public boolean isTriplet(String splicedText) {
 
-        for (int j = 1; j < 3; j++) {
-            if (splicedText.charAt(j) != splicedText.charAt(0)) {
-                return false;
+        for (int j = 1; j < 3; j++) { //takes second / third digit
+            if (splicedText.charAt(j) != splicedText.charAt(0)) { //checks against first
+                return false; //if different, moves on to next triplet check
             } 
         }
 
-        return true;
+        return true; //if all are same, give signal to add to count
     }
     /*
      * Exercise 7.
@@ -195,8 +196,24 @@ public class ProblemSet5 {
      */
     
     public long addMe(String text) {
-        long temp = 1;
-        return temp;
+
+        long sum = -1; 
+
+        if (text != null) { //if text is null, return -1
+            char firstChar;
+
+            sum++; // Else, set sum = to correct value
+
+            for (int i = 0; i < text.length(); i++) {
+                System.out.println(sum);
+                firstChar = text.charAt(i);
+                if (Character.isDigit(firstChar)) {
+                  sum += Integer.parseInt(text.substring(i, i+1));
+                }
+            }
+        }
+
+        return sum;
     }
     
     /*
