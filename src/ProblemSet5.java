@@ -139,7 +139,6 @@ public class ProblemSet5 {
                     }
                 }
 
-
                 if (splicedText.substring(splicedText.length() - 1).equals(suffixString)) {
                     suffixedWords++;
                 }
