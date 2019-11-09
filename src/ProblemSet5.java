@@ -29,6 +29,12 @@ public class ProblemSet5 {
         ps.triplets("booo boooooooooooooooooooooooooooy");
         ps.addMe("1000 test cases, 100% loss of sanity, 30 hours, five times where I ate.");
 
+        System.out.println(ps.sequence("abbcccdddd"));
+        System.out.println(ps.sequence("aAabBbBb"));
+        System.out.println(ps.sequence(""));
+        System.out.println(ps.sequence("   "));
+        System.out.println(ps.sequence(null));
+
     }
     
     /*
@@ -160,7 +166,7 @@ public class ProblemSet5 {
 
         int triplets = -1;
 
-        if (text != null && text.length() != 0) {
+        if (text != null) {
             String splicedText = "";
 
             triplets++; //+1 to remove failed test case
@@ -205,7 +211,6 @@ public class ProblemSet5 {
             sum++; // Else, set sum = to correct value
 
             for (int i = 0; i < text.length(); i++) {
-                System.out.println(sum);
                 firstChar = text.charAt(i);
                 if (Character.isDigit(firstChar)) {
                   sum += Integer.parseInt(text.substring(i, i+1));
@@ -223,9 +228,38 @@ public class ProblemSet5 {
      */
     
     public long sequence(String text) {
-        long temp = 1;
-        return temp;
-    }
+
+        if (text != null) {
+
+          long longestSequence = 1;
+          long sequenceLength = 1;
+          char char1 = ' ';
+          char char2 = ' ';
+
+          for (int i = 1; i < text.length(); i++ ) {
+
+            char1 = text.charAt(i-1);
+            char2 = text.charAt(i);
+
+            if (char1 == char2) {
+              sequenceLength -= -1;
+
+              if (sequenceLength > longestSequence) {
+                longestSequence = sequenceLength;
+              }
+             } else {
+               sequenceLength = 1;
+             }
+          }
+            if (text.length() == 0) {
+              longestSequence = 0;
+            }
+            return longestSequence;
+        }else {
+          return -1;
+        }
+      }
+  
     
     /*
      * Exercise 9.
