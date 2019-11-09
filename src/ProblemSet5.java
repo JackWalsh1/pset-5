@@ -314,7 +314,18 @@ public class ProblemSet5 {
      */
     
     public boolean isPalindrome(String text) {
-        boolean temp = false;
-        return temp;
-    }
+        String backwards = "";
+        boolean isPal = false;
+        if (text.equals(null)) {
+          return isPal;
+        } else {
+          for (int i = text.length() - 1; i >= 0; i--) {
+            backwards += String.valueOf(text.charAt(i));
+          }
+          if (text.equals(backwards)) {
+            isPal = true;
+          }
+          return isPal;
+        }
+      }
 }
