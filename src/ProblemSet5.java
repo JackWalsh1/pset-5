@@ -254,8 +254,11 @@ public class ProblemSet5 {
             if (text.length() == 0) {
               longestSequence = 0;
             }
+
             return longestSequence;
+
         }else {
+
           return -1;
         }
       }
@@ -269,7 +272,39 @@ public class ProblemSet5 {
      */
     
     public String intertwine(String a, String b) {
-        return a;
+
+        long record = 0;
+        String intertwined = "";
+
+        if (a != null && b != null) {
+
+            if (a.length() > b.length()) {
+
+                record = a.length();
+                // isARecord = true;
+
+            } else {
+                record = b.length();
+            }
+
+            for (int i = 0;i < record; i++) {
+                if (i < a.length() && i < b.length()) {
+
+                    intertwined += String.valueOf(a.charAt(i));
+                    intertwined += String.valueOf(b.charAt(i));
+
+                } else if (i < a.length()) {
+                    intertwined += String.valueOf(a.charAt(i));
+                } else if (i < b.length()) {
+                    intertwined += String.valueOf(b.charAt(i));
+                }
+            }
+
+        } else {
+            intertwined = null;
+        }
+
+        return intertwined;
     }
     
     /*
