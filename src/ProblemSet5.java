@@ -281,7 +281,7 @@ public class ProblemSet5 {
             if (a.length() > b.length()) {
 
                 record = a.length();
-                // isARecord = true;
+
 
             } else {
                 record = b.length();
